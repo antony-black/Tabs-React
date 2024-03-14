@@ -12,5 +12,3 @@ export const tabsContent = [
     content: <div>The random content</div>,
   },
 ];
-
-// className={`tab-item ${currentTabIndex === index ? "active" : ""}`}

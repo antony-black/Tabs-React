@@ -5,8 +5,12 @@ import "./index.scss";
 export default function Tabs() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
-  function handleOnClick(index) {
+  const handleOnClick = (index) => {
     setActiveTabIndex(index);
+  }
+
+  const isActive = (index) => {
+    return activeTabIndex === index ? "tabs-item-active" : "";
   }
 
   return (
@@ -16,7 +20,7 @@ export default function Tabs() {
           <div
             onClick={() => handleOnClick(index)}
             key={tabItem.label}
-            className={`tabs-item ${activeTabIndex === index ? "tabs-item-active" : ""}`}
+            className={`tabs-item ${isActive(index)}`}
           >
             <span className="label">{tabItem.label}</span>
           </div>
